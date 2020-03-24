@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define int long long
+using namespace std;
+
+int32_t main()
+{
+	
+		int l , m , n;
+		cin >> m >> n >> l;
+		
+		int a, b, c;
+		int d = m*n*l;
+		
+		int h = a*b*c;
+		h = sqrt(d);
+		b =( m*n)/h;
+		a = (m*l)/h;
+		c  = (n*l)/h;
+		
+		cout << 4*(a+b+c);
+		
+	
+	return 0;
+}
+	
