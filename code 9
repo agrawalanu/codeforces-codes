@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define int long long
+using namespace std;
+
+int32_t main()
+{
+		
+	int n;
+	cin >> n;
+	
+	int a[7];
+	for(int i =0; i<7; i++)
+		cin >> a[i];
+		
+	int d=0;
+	int s= 0;
+	while(s<n)
+	{
+		s+= a[d%7];
+		d++;
+		
+	}	
+	d%= 7;
+	cout << (d?d:7);
+	return 0;
+}
+	
