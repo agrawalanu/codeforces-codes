@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+
+#define int long long
+#define endl "\n"
+
+using namespace std;
+
+int32_t main()
+{
+	map <int,vector <int> > m;
+
+	int n;
+	cin >> n;
+
+	for(int i=0;i<n;i++)
+	{
+		int x;
+		cin >> x;
+
+		m[x].push_back(i+1);
+	}
+
+	vector <pair<int,int> > ans;
+
+	for(auto i:m)
+	{
+		if(i.second.size() == 1)
+		{
+			ans.push_back({i.first,0LL});
+			continue;
+		}
+
+		int diff = i.second[1] - i.second[0];
+
+		for(int j=2;j<i.second.size();j++)
+		{
+			int curr_diff = i.second[j] - i.second[j-1];
+
+			if(curr_diff != diff)
+				diff = -1;
+		}
+
+		if(diff >= 0)
+			ans.push_back({i.first,diff});
+	}
+
+	cout << ans.size() << endl;
+
+	for(auto i:ans)
+		cout << i.first << " " << i.second << endl;
+}
