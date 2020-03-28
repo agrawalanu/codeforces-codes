@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	int n, x, y;
+	cin >> n >> x >> y;
+	
+	int d = (y*n)/100;
+	if((y*n)%100 == 0)
+	{
+		if(d==x || d<x)
+			cout << 0;
+		else
+		cout << d-x;
+	}
+	else
+	{
+		if(d+1 ==x || d+1<x)
+			cout << 0;
+		else
+		cout << d-x+1;
+	}
+
+	
+}
