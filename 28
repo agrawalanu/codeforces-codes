@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	int t;
+	cin >> t;
+	
+	while(t--)
+	{
+		int n;
+		cin >> n;
+		
+		string s;
+		cin >> s;
+		
+		int c =0, d =0;
+		
+		if(s[0] == 'L')
+			c--;
+		if(s[0] == 'R')
+			c++;
+		if(s[0] == 'U' )
+			d++;
+		if(s[0] == 'D')
+			d--;
+			
+		for(int i =1; i<n; i++)
+		{
+			if(s[i] == 'L' || s[i] == 'R')
+			{
+				if(s[i-1] != 'L' && s[i-1] != 'R')
+				{
+					if(s[i] == 'L')
+						c--;
+					else 
+						c++;
+				}
+			}
+			else if(s[i] == 'U' || s[i] == 'D')
+			{
+				if(s[i-1] != 'U' && s[i-1] != 'D')
+				{
+					if(s[i] == 'U' )
+						d++;
+					else 
+						d--;	
+				}
+			}
+		}
+		cout << c << " " << d << endl;
+			
+		
+	}
+	return 0;
+}
+		
+	 	
