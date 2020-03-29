@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+#define int long long
+using namespace std;
+int32_t main()
+{
+	int n , m;
+	cin >> n >> m;
+	
+	n-= m;
+	int kmax = (n*(n+1))/2;
+	
+	int c = n/m;
+	int d = n%m;
+	int kmin = ((c+1)*(2*d + m*c))/2;
+	
+	cout << kmin << " " << kmax;
+}
