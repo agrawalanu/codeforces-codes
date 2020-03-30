@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	int t;
+	cin >> t;
+
+	
+		int x, y;
+		set<int> s, m;
+		
+		for(int i =1; i<=t; i++)
+		{
+			cin >> x >> y;
+			s.insert(x);
+			m.insert(y);
+		}
+		cout << min(s.size(), m.size());
+	
+}
