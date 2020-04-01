@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	string  s, n;
+	getline(cin, s);
+	getline(cin, n);
+	int f[200] = {0};
+	for( int i = 0; i < s.size(); i++ )
+	{
+        if( s[i] != ' ' )
+			f[s[i]]++;
+	}
+	
+	for(int i =0; i<n.size(); i++)
+	{
+		if(n[i] == ' ')
+		continue;
+		if(f[n[i]] == 0)
+		{
+			cout << "NO";
+			return 0;
+		}
+		f[n[i]]--;	
+	}
+	cout << "YES";
+}
