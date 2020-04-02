@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#define int long long
+#define mod 1000000007
+using namespace std;
+
+int32_t main()
+{
+	 int x, y;
+	 cin >> x >> y;
+	 int n;
+	 cin >> n;
+	 int a[6];
+	 x = (x+mod)%mod;
+	 y = (y+mod)%mod;
+	 
+	 a[1] = x;
+	 a[2] = y;
+	 a[3] = (y-x+ mod)%mod;
+	 a[4] = (mod - x)%mod;
+	 a[5] = (mod-y)%mod;
+	 a[0] = (x-y +mod)%mod;
+	 
+	 cout << a[n%6];
+ 	 
+	 
+}
